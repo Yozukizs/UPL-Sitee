@@ -316,7 +316,7 @@ players.sort((a,b)=>b.goals-a.goals);
 
 document.getElementById("topPlayers").innerHTML =
 players.slice(0,5).map(p=>`
-<div class="item">${p.username} — ${p.goals} goals</div>
+<div class="item">${p.name} — ${p.goals} goals</div>
 `).join("");
 
 });
