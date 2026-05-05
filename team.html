@@ -1,164 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Team</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <link rel="icon" href="images/upl.png">
-
-<style>
-
-body{
-margin:0;
-font-family:Montserrat;
-background:radial-gradient(circle,#0b1a3a,#020617);
-color:white;
-}
-
-/* TOPBAR */
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 40px;
-background:rgba(10,20,40,0.85);
-}
-
-.left{display:flex;align-items:center;gap:10px;}
-.left img{width:32px;}
-
-.nav{display:flex;gap:25px;}
-.nav a{color:#9ca3af;text-decoration:none;}
-.nav a:hover{color:white;}
-
-.container{padding:40px;}
-
-.back{
-margin-bottom:20px;
-display:inline-block;
-color:#60a5fa;
-cursor:pointer;
-}
-
-.header{
-display:flex;
-align-items:center;
-gap:15px;
-margin-bottom:30px;
-}
-
-.header img{
-width:50px;
-}
-
-.player{
-display:grid;
-grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;
-background:rgba(20,30,60,0.6);
-padding:14px;
-border-radius:10px;
-margin-bottom:10px;
-transition:0.2s;
-}
-
-.player:hover{
-background:rgba(30,45,80,0.8);
-transform:scale(1.01);
-}
-
-.top-row{
-display:grid;
-grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;
-margin-bottom:10px;
-color:#9ca3af;
-}
-
-</style>
 </head>
 
 <body>
 
 <div class="topbar">
-<div class="left">
-<img src="images/upl.png">
-<b>UPL League</b>
-</div>
+  <div class="logo" onclick="location.href='index.html'">
+    <img src="images/upl.png">
+    <b>UPL League</b>
+  </div>
 
-<div class="nav">
-<a href="index.html">Dashboard</a>
-<a href="teams.html">Teams</a>
-<a href="players.html">Players</a>
-<a href="matches.html">Matches</a>
-<a href="news.html">News</a>
-</div>
+  <div class="nav">
+    <a href="index.html">Dashboard</a>
+    <a href="teams.html" class="active">Teams</a>
+    <a href="players.html">Players</a>
+    <a href="matches.html">Matches</a>
+    <a href="news.html">News</a>
+  </div>
 </div>
 
 <div class="container">
 
-<div class="back" onclick="window.location='teams.html'">← Back to Teams</div>
+  <h1 id="teamName"></h1>
 
-<div class="header">
-<img id="teamLogo">
-<h1 id="teamName"></h1>
-</div>
-
-<div class="top-row">
-<span>PLAYER</span>
-<span>CLASS</span>
-<span>GOALS</span>
-<span>ASSISTS</span>
-<span>GAMES</span>
-<span>POSITION</span>
-</div>
-
-<div id="players"></div>
+  <table>
+    <thead>
+      <tr>
+        <th>PLAYER</th>
+        <th>CLASS</th>
+        <th>GOALS</th>
+        <th>ASSISTS</th>
+        <th>GAMES</th>
+        <th>ROLE</th>
+        <th>POSITION</th>
+      </tr>
+    </thead>
+    <tbody id="players"></tbody>
+  </table>
 
 </div>
 
 <script>
 
-// GET TEAM FROM URL
 const params = new URLSearchParams(window.location.search);
 const team = params.get("team");
 
-// SET NAME + LOGO
 document.getElementById("teamName").innerText = team;
-document.getElementById("teamLogo").src = "images/" + team.toLowerCase() + ".png";
 
 // LOAD PLAYERS
 fetch("data/players.json")
-.then(r=>r.json())
-.then(data=>{
+.then(res => res.json())
+.then(players => {
 
-const box = document.getElementById("players");
+  const teamPlayers = players.filter(p => p.team === team);
 
-// FILTER BY CLUB
-const teamPlayers = data.filter(p => p.club === team);
+  const tbody = document.getElementById("players");
 
-// DEBUG (important)
-console.log("TEAM:", team);
-console.log("PLAYERS:", teamPlayers);
+  if(teamPlayers.length === 0){
+    tbody.innerHTML = `<tr><td colspan="7">No players found</td></tr>`;
+    return;
+  }
 
-// SHOW PLAYERS
-teamPlayers.forEach(p=>{
-
-box.innerHTML += `
-<div class="player">
-<span>${p.username}</span>
-<span>${p.class}</span>
-<span>${p.goals}</span>
-<span>${p.assists}</span>
-<span>${p.matches}</span>
-<span>${p.position}</span>
-</div>
-`;
-
-});
-
-// IF EMPTY
-if(teamPlayers.length === 0){
-box.innerHTML = "<p>No players in this team</p>";
-}
+  tbody.innerHTML = teamPlayers.map(p => `
+    <tr>
+      <td class="${p.class}">${p.name}</td>
+      <td>${p.class}</td>
+      <td>${p.goals}</td>
+      <td>${p.assists}</td>
+      <td>${p.games}</td>
+      <td>${p.role}</td>
+      <td>${p.position}</td>
+    </tr>
+  `).join("");
 
 });
 
