@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Players</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="images/upl.png">
+
+<style>
+
+/* SEARCH BAR */
+.search{
+margin-bottom:25px;
+position:relative;
+width:350px;
+}
+
+.search input{
+width:100%;
+padding:12px 15px 12px 40px;
+border-radius:10px;
+border:none;
+outline:none;
+background:rgba(30,40,70,0.6);
+color:white;
+transition:0.3s;
+}
+
+.search input:focus{
+box-shadow:0 0 12px #2563eb;
+background:rgba(40,60,100,0.8);
+}
+
+.search::before{
+content:"🔍";
+position:absolute;
+left:12px;
+top:9px;
+font-size:18px;
+}
+
+/* TABLE */
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+color:#9ca3af;
+text-align:left;
+padding:12px;
+}
+
+td{
+padding:12px;
+}
+
+tr{
+border-bottom:1px solid rgba(255,255,255,0.1);
+transition:0.2s;
+}
+
+tr:hover{
+background:rgba(40,60,100,0.4);
+}
+
+/* CLASS COLORS */
+.X{color:#ef4444;}
+.S{color:#a855f7;}
+.A{color:#3b82f6;}
+.B{color:#22c55e;}
+.C{color:#f97316;}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="logo" onclick="window.location='index.html'">
+<img src="images/upl.png">
+<b>UPL League</b>
+</div>
+
+<div class="nav">
+<a href="index.html">Dashboard</a>
+<a href="teams.html">Teams</a>
+<a href="players.html" class="active">Players</a>
+<a href="matches.html">Matches</a>
+<a href="news.html">News</a>
+</div>
+</div>
+
+<div style="padding:40px">
+
+<h1>Players</h1>
+
+<div class="search">
+<input type="text" id="search" placeholder="Search player..." oninput="render()">
+</div>
+
+<table>
+<thead>
+<tr>
+<th>PLAYER</th>
+<th>TEAM</th>
+<th>CLASS</th>
+<th>GOALS</th>
+<th>ASSISTS</th>
+<th>GAMES</th>
+<th>ROLE</th>
+<th>POSITION</th>
+</tr>
+</thead>
+
+<tbody id="table"></tbody>
+</table>
+
+</div>
+
+<script>
+
+let players=[];
+
+fetch("data/players.json")
+.then(r=>r.json())
+.then(data=>{
+players=data;
+render();
+});
+
+function render(){
+
+let val=document.getElementById("search").value.toLowerCase();
+
+document.getElementById("table").innerHTML =
+players
+.filter(p=>p.username.toLowerCase().includes(val))
+.map(p=>`
+<tr>
+<td class="${p.class}">${p.username}</td>
+<td>${p.team}</td>
+<td class="${p.class}">${p.class}</td>
+<td>${p.goals}</td>
+<td>${p.assists}</td>
+<td>${p.games}</td>
+<td>${p.role}</td>
+<td>${p.position}</td>
+</tr>
+`).join("");
+
+}
+
+</script>
+
+</body>
+</html>

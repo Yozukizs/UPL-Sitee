@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Match</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="images/upl.png">
+
+<style>
+
+.container{
+padding:40px;
+text-align:center;
+}
+
+.teams{
+font-size:28px;
+font-weight:bold;
+}
+
+.score{
+font-size:40px;
+margin:20px 0;
+}
+
+.section{
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="logo" onclick="window.location='index.html'">
+<img src="images/upl.png">
+<b>UPL League</b>
+</div>
+
+<div class="nav">
+<a href="index.html">Dashboard</a>
+<a href="teams.html">Teams</a>
+<a href="players.html">Players</a>
+<a href="matches.html" class="active">Matches</a>
+<a href="news.html">News</a>
+</div>
+</div>
+
+<div class="container">
+
+<div id="teams" class="teams"></div>
+<div id="score" class="score"></div>
+<div id="stadium"></div>
+
+<div class="section">
+<h3>Scorers</h3>
+<div id="scorers"></div>
+</div>
+
+<div class="section">
+<h3>Assists</h3>
+<div id="assists"></div>
+</div>
+
+</div>
+
+<script>
+
+const id = new URLSearchParams(window.location.search).get("id");
+
+fetch("data/matches.json")
+.then(r=>r.json())
+.then(data=>{
+
+const m = data.find(x=>x.id == id);
+
+if(!m){
+document.body.innerHTML = "<h1>Match not found</h1>";
+return;
+}
+
+document.getElementById("teams").innerText =
+m.home + " vs " + m.away;
+
+document.getElementById("score").innerText =
+m.played ? m.homeScore + " - " + m.awayScore : "Upcoming";
+
+document.getElementById("stadium").innerText =
+"Stadium: " + (m.stadium || "Unknown");
+
+document.getElementById("scorers").innerHTML =
+(m.scorers || []).join("<br>");
+
+document.getElementById("assists").innerHTML =
+(m.assists || []).join("<br>");
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UPL Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="images/upl.png">
+
+<style>
+
+body{
+margin:0;
+font-family:Montserrat;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+overflow-y:auto;
+}
+
+/* TOPBAR */
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(10,20,40,0.9);
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+}
+
+.logo img{
+width:30px;
+}
+
+.nav a{
+margin-left:20px;
+text-decoration:none;
+color:#9ca3af;
+transition:0.2s;
+position:relative;
+}
+
+.nav a:hover,
+.nav .active{
+color:white;
+}
+
+.nav .active::after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:0;
+width:100%;
+height:2px;
+background:#2563eb;
+}
+
+/* HERO */
+.hero{
+padding:40px;
+border-radius:16px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+margin-bottom:30px;
+}
+
+/* STATS */
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-bottom:30px;
+}
+
+.card{
+background:rgba(20,30,60,0.8);
+padding:20px;
+border-radius:14px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 15px rgba(37,99,235,0.4);
+}
+
+/* SECTION */
+.section{
+margin-top:40px;
+}
+
+.section h2{
+margin-bottom:15px;
+}
+
+/* LIST */
+.list{
+background:rgba(20,30,60,0.8);
+border-radius:12px;
+padding:15px;
+}
+
+.item{
+padding:10px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.item:last-child{
+border:none;
+}
+
+.item:hover{
+background:rgba(40,60,100,0.4);
+}
+
+/* INFO BOX */
+.info-box{
+background:rgba(20,30,60,0.8);
+padding:20px;
+border-radius:12px;
+line-height:1.6;
+transition:0.3s;
+}
+
+.info-box:hover{
+box-shadow:0 0 15px rgba(37,99,235,0.3);
+}
+
+/* FAQ */
+.faq-item{
+background:rgba(20,30,60,0.8);
+padding:15px;
+border-radius:10px;
+margin-bottom:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.faq-item:hover{
+background:rgba(40,60,100,0.6);
+}
+
+.faq-q{
+font-weight:600;
+}
+
+.faq-a{
+margin-top:10px;
+display:none;
+color:#9ca3af;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+
+<div class="logo" onclick="window.location='index.html'">
+<img src="images/upl.png">
+<b>UPL League</b>
+</div>
+
+<div class="nav">
+<a href="index.html" class="active">Dashboard</a>
+<a href="teams.html">Teams</a>
+<a href="players.html">Players</a>
+<a href="matches.html">Matches</a>
+<a href="news.html">News</a>
+</div>
+
+</div>
+
+<div style="padding:40px">
+
+<!-- HERO -->
+<div class="hero">
+<h1>League Dashboard</h1>
+<p>Welcome to the official UPL League platform</p>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+
+<div class="card">
+<h2 id="totalPlayers">0</h2>
+<p>Players</p>
+</div>
+
+<div class="card">
+<h2 id="totalTeams">0</h2>
+<p>Teams</p>
+</div>
+
+<div class="card">
+<h2 id="totalGoals">0</h2>
+<p>Goals</p>
+</div>
+
+<div class="card">
+<h2 id="totalMatches">0</h2>
+<p>Matches</p>
+</div>
+
+</div>
+
+<!-- TOP SCORERS -->
+<div class="section">
+<h2>Top Scorers</h2>
+<div id="topPlayers" class="list"></div>
+</div>
+
+<!-- RESULTS -->
+<div class="section">
+<h2>Recent Results</h2>
+<div id="results" class="list"></div>
+</div>
+
+<!-- UPCOMING -->
+<div class="section">
+<h2>Upcoming Matches</h2>
+<div id="upcoming" class="list"></div>
+</div>
+
+<!-- NEWS -->
+<div class="section">
+<h2>Latest News</h2>
+<div id="news" class="list"></div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+<h2>About UPL League</h2>
+
+<div class="info-box">
+<p>
+UPL League is a competitive Roblox football league focused on realism,
+organization, and player development. Our goal is to create a structured
+environment where players can compete and improve.
+</p>
+</div>
+</div>
+
+<!-- WHO ARE WE -->
+<div class="section">
+<h2>Who Are We</h2>
+
+<div class="info-box">
+<p>
+We are a community-driven football organization built by passionate players.
+UPL ensures fair play, competitive balance, and a professional league experience.
+</p>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+<h2>FAQ</h2>
+
+<div class="faq">
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">How do I join a team?</div>
+<div class="faq-a">Contact managers or participate in tryouts.</div>
+</div>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">How are stats tracked?</div>
+<div class="faq-a">Stats are manually updated after matches.</div>
+</div>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">What do classes mean?</div>
+<div class="faq-a">Classes (X, S, A, B, C) represent skill tiers.</div>
+</div>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+<div class="faq-q">Can I transfer teams?</div>
+<div class="faq-a">Yes, but it must follow league rules.</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+/* FAQ */
+function toggleFAQ(el){
+const a = el.querySelector(".faq-a");
+a.style.display = a.style.display === "block" ? "none" : "block";
+}
+
+/* PLAYERS */
+fetch("data/players.json")
+.then(r=>r.json())
+.then(players=>{
+
+document.getElementById("totalPlayers").innerText = players.length;
+
+document.getElementById("totalTeams").innerText =
+[...new Set(players.map(p=>p.team))].length;
+
+document.getElementById("totalGoals").innerText =
+players.reduce((a,b)=>a+b.goals,0);
+
+players.sort((a,b)=>b.goals-a.goals);
+
+document.getElementById("topPlayers").innerHTML =
+players.slice(0,5).map(p=>`
+<div class="item">${p.username} — ${p.goals} goals</div>
+`).join("");
+
+});
+
+/* MATCHES */
+fetch("data/matches.json")
+.then(r=>r.json())
+.then(matches=>{
+
+document.getElementById("totalMatches").innerText = matches.length;
+
+document.getElementById("results").innerHTML =
+matches.filter(m=>m.played).slice(0,5).map(m=>`
+<div class="item">${m.home} ${m.homeScore}-${m.awayScore} ${m.away}</div>
+`).join("");
+
+document.getElementById("upcoming").innerHTML =
+matches.filter(m=>!m.played).slice(0,5).map(m=>`
+<div class="item">${m.home} vs ${m.away}</div>
+`).join("");
+
+});
+
+/* NEWS */
+fetch("data/news.json")
+.then(r=>r.json())
+.then(news=>{
+document.getElementById("news").innerHTML =
+news.slice(0,5).map(n=>`
+<div class="item">${n.title}</div>
+`).join("");
+});
+
+</script>
+
+</body>
+</html>

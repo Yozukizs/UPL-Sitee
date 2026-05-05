@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>News</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="images/upl.png">
+
+<style>
+
+/* SLIDER */
+.slider{
+height:320px;
+border-radius:16px;
+overflow:hidden;
+margin-bottom:30px;
+position:relative;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:0.6s;
+}
+
+.slide.active{opacity:1;}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.slide .text{
+position:absolute;
+bottom:0;
+padding:20px;
+background:linear-gradient(transparent,rgba(0,0,0,0.9));
+}
+
+/* FILTER */
+.categories{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+}
+
+.cat{
+padding:8px 16px;
+background:#111;
+border-radius:8px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.cat.active{
+background:#2563eb;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.card{
+background:rgba(20,30,60,0.7);
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 0 20px rgba(37,99,235,0.4);
+}
+
+.card img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+.card .text{
+padding:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="logo" onclick="window.location='index.html'">
+<img src="images/upl.png">
+<b>UPL League</b>
+</div>
+
+<div class="nav">
+<a href="index.html">Dashboard</a>
+<a href="teams.html">Teams</a>
+<a href="players.html">Players</a>
+<a href="matches.html">Matches</a>
+<a href="news.html" class="active">News</a>
+</div>
+</div>
+
+<div style="padding:40px">
+
+<div id="slider" class="slider"></div>
+
+<div class="categories">
+<div class="cat active" onclick="filter('All',this)">All</div>
+<div class="cat" onclick="filter('Match',this)">Match</div>
+<div class="cat" onclick="filter('Transfer',this)">Transfer</div>
+<div class="cat" onclick="filter('League',this)">League</div>
+</div>
+
+<div id="grid" class="grid"></div>
+
+</div>
+
+<script>
+
+let allNews=[];
+
+fetch("data/news.json")
+.then(r=>r.json())
+.then(data=>{
+allNews=data;
+loadSlider(data);
+loadGrid(data);
+});
+
+let i=0;
+
+function loadSlider(data){
+const box=document.getElementById("slider");
+
+data.slice(0,3).forEach((n,x)=>{
+box.innerHTML+=`
+<div class="slide ${x===0?'active':''}">
+<img src="${n.image}">
+<div class="text">
+<h2>${n.title}</h2>
+</div>
+</div>`;
+});
+
+setInterval(()=>{
+let slides=document.querySelectorAll(".slide");
+slides[i].classList.remove("active");
+i=(i+1)%slides.length;
+slides[i].classList.add("active");
+},4000);
+}
+
+function loadGrid(data){
+const grid=document.getElementById("grid");
+grid.innerHTML="";
+
+data.forEach(n=>{
+grid.innerHTML+=`
+<div class="card" onclick="openNews(${n.id})">
+<img src="${n.image}">
+<div class="text">${n.title}</div>
+</div>`;
+});
+}
+
+function filter(type,el){
+document.querySelectorAll(".cat").forEach(c=>c.classList.remove("active"));
+el.classList.add("active");
+
+if(type==="All") loadGrid(allNews);
+else loadGrid(allNews.filter(n=>n.category===type));
+}
+
+function openNews(id){
+window.location="article.html?id="+id;
+}
+
+</script>
+
+</body>
+</html>

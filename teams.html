@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teams</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="images/upl.png">
+
+<style>
+
+body{
+margin:0;
+font-family:Montserrat;
+background:radial-gradient(circle,#0b1a3a,#020617);
+color:white;
+}
+
+/* TOPBAR */
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:rgba(10,20,40,0.85);
+backdrop-filter:blur(10px);
+}
+
+.left{
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.left:hover{
+transform:scale(1.05);
+filter:brightness(1.2);
+}
+
+.left img{
+width:34px;
+}
+
+.nav{
+display:flex;
+gap:25px;
+}
+
+.nav a{
+color:#9ca3af;
+text-decoration:none;
+position:relative;
+transition:0.25s;
+}
+
+.nav a:hover{
+color:white;
+}
+
+.nav a::after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:0;
+width:0%;
+height:2px;
+background:#2563eb;
+transition:0.3s;
+}
+
+.nav a:hover::after{
+width:100%;
+}
+
+/* CONTAINER */
+.container{
+padding:40px;
+}
+
+/* TEAMS GRID */
+.teams{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+/* TEAM CARD */
+.team{
+background:rgba(20,30,60,0.6);
+border-radius:20px;
+padding:40px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+transition:0.3s;
+}
+
+.team:hover{
+transform:translateY(-10px) scale(1.03);
+background:rgba(30,45,80,0.8);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* LOGO */
+.team img{
+width:100px;
+margin-bottom:15px;
+transition:0.3s;
+}
+
+.team:hover img{
+transform:scale(1.1);
+}
+
+/* NAME */
+.team span{
+font-size:20px;
+font-weight:600;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="left" onclick="window.location='index.html'">
+<img src="images/upl.png">
+<b>UPL League</b>
+</div>
+
+<div class="nav">
+<a href="index.html">Dashboard</a>
+<a href="teams.html">Teams</a>
+<a href="players.html">Players</a>
+<a href="matches.html">Matches</a>
+<a href="news.html">News</a>
+</div>
+
+</div>
+
+<div class="container">
+
+<h1>Teams</h1>
+
+<div class="teams">
+
+<div class="team" onclick="go('Shakhtar')">
+<img src="images/shakhtar.png">
+<span>Shakhtar</span>
+</div>
+
+<div class="team" onclick="go('Bukovyna')">
+<img src="images/bukovyna.png">
+<span>Bukovyna</span>
+</div>
+
+<div class="team" onclick="go('Polissya')">
+<img src="images/polissya.png">
+<span>Polissya</span>
+</div>
+
+<div class="team" onclick="go('Chornomorets')">
+<img src="images/chornomorets.png">
+<span>Chornomorets</span>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function go(team){
+window.location = "team.html?team=" + team;
+}
+
+</script>
+
+</body>
+</html>

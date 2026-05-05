@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Article</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="icon" href="images/upl.png">
+
+<style>
+
+body{
+margin:0;
+font-family:Montserrat;
+background:#020617;
+color:white;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px;
+}
+
+.back{
+margin-bottom:20px;
+cursor:pointer;
+color:#60a5fa;
+}
+
+img{
+width:100%;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.meta{
+color:#9ca3af;
+margin-bottom:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="back" onclick="window.location='news.html'">← Back</div>
+
+<h1 id="title"></h1>
+<div class="meta" id="meta"></div>
+<img id="image">
+<p id="content"></p>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+fetch("data/news.json")
+.then(r=>r.json())
+.then(data=>{
+
+const article = data.find(n=>n.id == id);
+
+if(!article){
+document.body.innerHTML="Article not found";
+return;
+}
+
+// SAVE VIEWS
+let views = localStorage.getItem("news_"+id) || 0;
+views++;
+localStorage.setItem("news_"+id,views);
+
+// DISPLAY
+document.getElementById("title").innerText = article.title;
+document.getElementById("image").src = article.image;
+document.getElementById("content").innerText = article.content;
+document.getElementById("meta").innerText = `${article.category} • ${views} views`;
+
+});
+
+</script>
+
+</body>
+</html>
