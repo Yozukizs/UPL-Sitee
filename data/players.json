@@ -9,7 +9,7 @@
     "role": "Assistant",
     "position": "LW"
   },
-   {
+  {
     "name": "slimssinho",
     "team": "Shakhtar",
     "class": "C",
@@ -19,97 +19,7 @@
     "role": "Manager",
     "position": "ST"
   },
-   {
-    "name": "qistox",
-    "team": "Bukovyna",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Player",
-    "position": "CB"
-  },
-   {
-    "name": "dotmp4_x",
-    "team": "Chornomorets",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Manager",
-    "position": "LW"
-  },
-   {
-    "name": "dekunuri",
-    "team": "Polissya",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Manager",
-    "position": "CAM"
-  },
-   {
-    "name": "Giga_Footbalist",
-    "team": "Chornomorets",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Player",
-    "position": "CM"
-  },
-    {
-    "name": "nazomiku",
-    "team": "Polissya",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Player",
-    "position": "ST"
-  },
-    {
-    "name": "KIwkaBtw",
-    "team": "Polissya",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Player",
-    "position": "RW"
-  },
-    {
-    "name": "ilyafuirsov",
-    "team": "Chornomorets",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Player",
-    "position": "CB"
-  },
-    {
-    "name": "sevlezy",
-    "team": "Shakhtar",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Player",
-    "position": "GK"
-  },
-    {
-    "name": "mikail1213237",
-    "team": "Polissya",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Player",
-    "position": "GK"
-  },
-    {
+  {
     "name": "dotbloxfuny",
     "team": "Shakhtar",
     "class": "C",
@@ -119,17 +29,7 @@
     "role": "Player",
     "position": "CM"
   },
-    {
-    "name": "THAHKYOU200",
-    "team": "Chornomorets",
-    "class": "C",
-    "goals": 0,
-    "assists": 0,
-    "games": 0,
-    "role": "Player",
-    "position": "GK"
-  },
-    {
+  {
     "name": "poore01",
     "team": "Shakhtar",
     "class": "C",
@@ -139,17 +39,58 @@
     "role": "Player",
     "position": "CAM"
   },
-    {
-    "name": "Jairzinhoo68",
-    "team": "Chornomorets",
+  {
+    "name": "sevlezy",
+    "team": "Shakhtar",
     "class": "C",
     "goals": 0,
     "assists": 0,
     "games": 0,
     "role": "Player",
-    "position": "CM"
+    "position": "GK"
   },
-  
+
+  {
+    "name": "dekunuri",
+    "team": "Polissya",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Manager",
+    "position": "CAM"
+  },
+  {
+    "name": "mikail1213237",
+    "team": "Polissya",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Assistant",
+    "position": "GK"
+  },
+  {
+    "name": "KIwkaBtw",
+    "team": "Polissya",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Player",
+    "position": "RW"
+  },
+  {
+    "name": "nazomiku",
+    "team": "Polissya",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Player",
+    "position": "ST"
+  },
+
   {
     "name": "HENZZY_CM",
     "team": "Bukovyna",
@@ -159,5 +100,90 @@
     "games": 0,
     "role": "Manager",
     "position": "CB"
-  }
+  },
+  {
+    "name": "qistox",
+    "team": "Bukovyna",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Player",
+    "position": "CB"
+  },
+
+  {
+    "name": "dotmp4_x",
+    "team": "Chornomorets",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Manager",
+    "position": "LW"
+  },
+  {
+    "name": "Jairzinhoo68",
+    "team": "Chornomorets",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Assistant",
+    "position": "CM"
+  },
+  {
+    "name": "ilyafuirsov",
+    "team": "Chornomorets",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Player",
+    "position": "CB"
+  },
+  {
+    "name": "THAHKYOU200",
+    "team": "Chornomorets",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Player",
+    "position": "GK"
+  },
+  {
+    "name": "Giga_Footbalist",
+    "team": "Chornomorets",
+    "class": "C",
+    "goals": 0,
+    "assists": 0,
+    "games": 0,
+    "role": "Player",
+    "position": "CM"
+  },
+
+  { "name": "Newsletterl1", "team": "Shakhtar", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "Synvolin", "team": "Shakhtar", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "noahseandrumm", "team": "Shakhtar", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "Kairdekn", "team": "Shakhtar", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+
+  { "name": "cvvrloo", "team": "Polissya", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "Alif2162", "team": "Polissya", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "firstvaltaoi", "team": "Polissya", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "melldenis6570", "team": "Polissya", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+
+  { "name": "Blexerflexer", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "tomik226587", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "Lingard119", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "aecaldoo", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "zizo675456", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "kidor228realme673", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "werixph", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "wekut", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "zekolaltse", "team": "Bukovyna", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+
+  { "name": "qwizzy223", "team": "Chornomorets", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "BroskiGOATN1", "team": "Chornomorets", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" },
+  { "name": "WINRAR_TOP4IK", "team": "Chornomorets", "class": "C", "goals": 0, "assists": 0, "games": 0, "role": "Player", "position": "N/A" }
 ]
