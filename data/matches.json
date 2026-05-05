@@ -7,7 +7,19 @@
     "homeScore": 0,
     "awayScore": 0,
     "stadium": "Donbass Arena",
-    "scorers": [""],
-    "assists": [""]
+    "scorers": ["N/A"],
+    "assists": ["N/A"]
+  },
+
+    {
+    "id": 2,
+    "home": "Chornomorets",
+    "away": "Bukovyna",
+    "played": false,
+    "homeScore": 0,
+    "awayScore": 0,
+    "stadium": "Chornomorets Stadium",
+    "scorers": ["N/A"],
+    "assists": ["N/A"]
   }
 ]
