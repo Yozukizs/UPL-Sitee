@@ -1,0 +1,22 @@
+[
+  {
+    "username": "Player1",
+    "club": "Shakhtar",
+    "class": "A",
+    "goals": 5,
+    "assists": 2,
+    "matches": 10,
+    "role": "Player",
+    "position": "CM"
+  },
+  {
+    "username": "Player2",
+    "club": "Bukovyna",
+    "class": "B",
+    "goals": 3,
+    "assists": 1,
+    "matches": 8,
+    "role": "Manager",
+    "position": "GK"
+  }
+]

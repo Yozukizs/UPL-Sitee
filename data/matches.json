@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "home": "Shakhtar",
+    "away": "Polissya",
+    "played": false,
+    "homeScore": 0,
+    "awayScore": 0,
+    "stadium": "Donbass Arena",
+    "scorers": [""],
+    "assists": [""]
+  }
+]

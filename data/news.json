@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Hat-trick for Shakhtar Star",
+    "description": "Incredible debut performance",
+    "content": "Full detailed article text here...",
+    "image": "images/news1.jpg",
+    "category": "Match"
+  },
+  {
+    "id": 2,
+    "title": "Bukovyna signs new striker",
+    "description": "Transfer window heats up",
+    "content": "Transfer details...",
+    "image": "images/news2.png",
+    "category": "Transfer"
+  },
+  {
+    "id": 3,
+    "title": "League standings updated",
+    "description": "New table after matchday",
+    "content": "Full standings breakdown...",
+    "image": "images/news3.png",
+    "category": "League"
+  }
+]
