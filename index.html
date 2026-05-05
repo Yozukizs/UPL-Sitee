@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>UPL League</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="images/upl.png">
+
 </head>
 
 <body>
@@ -27,7 +30,7 @@
 
 <div class="container">
 
-  <!-- 🔥 HERO -->
+  <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
       <h1>UPL League</h1>
@@ -54,28 +57,19 @@
     <div class="hero-glow"></div>
   </div>
 
-  <!-- 🧠 ABOUT -->
-  <div class="card">
-    <h2>About UPL</h2>
-    <p>
-      UPL League is a competitive football environment where players compete,
-      track stats, and represent their teams across structured seasons.
-    </p>
-  </div>
-
-  <!-- 📊 TOP SCORERS -->
+  <!-- TOP SCORERS -->
   <div class="card">
     <h2>Top Scorers</h2>
     <div id="topScorers"></div>
   </div>
 
-  <!-- 📅 UPCOMING MATCHES -->
+  <!-- UPCOMING -->
   <div class="card">
     <h2>Upcoming Matches</h2>
     <div id="upcomingMatches"></div>
   </div>
 
-  <!-- 📰 NEWS -->
+  <!-- NEWS -->
   <div class="card">
     <h2>Latest News</h2>
     <div id="latestNews"></div>
@@ -85,7 +79,7 @@
 
 <script>
 
-// 📊 LOAD PLAYERS
+// PLAYERS
 fetch("data/players.json")
 .then(res => res.json())
 .then(players => {
@@ -95,7 +89,7 @@ fetch("data/players.json")
   const teams = [...new Set(players.map(p => p.team))];
   document.getElementById("totalTeams").innerText = teams.length;
 
-  // 🔥 TOP SCORERS
+  // TOP SCORERS
   const sorted = [...players].sort((a,b) => (b.goals||0) - (a.goals||0)).slice(0,5);
 
   document.getElementById("topScorers").innerHTML =
@@ -107,14 +101,14 @@ fetch("data/players.json")
 
 });
 
-// ⚽ LOAD MATCHES
+// MATCHES
 fetch("data/matches.json")
 .then(res => res.json())
 .then(matches => {
 
   document.getElementById("totalMatches").innerText = matches.length;
 
-  const upcoming = matches.filter(m => m.status === "upcoming").slice(0,3);
+  const upcoming = matches.filter(m => !m.played).slice(0,3);
 
   document.getElementById("upcomingMatches").innerHTML =
     upcoming.map(m => `
@@ -125,15 +119,13 @@ fetch("data/matches.json")
 
 });
 
-// 📰 LOAD NEWS
+// NEWS
 fetch("data/news.json")
 .then(res => res.json())
 .then(news => {
 
-  const latest = news.slice(0,3);
-
   document.getElementById("latestNews").innerHTML =
-    latest.map(n => `
+    news.slice(0,3).map(n => `
       <div class="list-item">
         ${n.title}
       </div>
