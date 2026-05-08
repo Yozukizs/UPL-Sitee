@@ -22,5 +22,13 @@
     "content": "Under the lights in Odesa, Chornomorets face a dangerous Bukovyna side in a clash where intensity, discipline and mentality could decide everything, with the hosts looking to control the tempo through experience while Bukovyna arrive hungry to prove they can compete with anyone and turn this matchday into a statement performance.",
     "image": "images/news2.png",
     "category": "Match"
+  },
+  {
+    "id": 4,
+    "title": "UPL Pre-Season Cup",
+    "description": "League board are set to warm up the league",
+    "content": "Since the start of official UPL26 league is May 29th,the league board decided to not only host pre-season friendlies but also host a little pre-season tournament,where 4 teams will compete to become the UPL26 Pre-Season Champions and start the season with small advantages.",
+    "image": "images/news4.png",
+    "category": "League"
   }
 ]
