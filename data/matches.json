@@ -3,12 +3,12 @@
     "id": 1,
     "home": "Shakhtar",
     "away": "Polissya",
-    "played": false,
-    "homeScore": 0,
-    "awayScore": 0,
+    "played": true,
+    "homeScore": 7,
+    "awayScore": 1,
     "stadium": "Donbass Arena",
-    "scorers": ["N/A"],
-    "assists": ["N/A"]
+    "scorers": ["slimssinho x3 dotbloxfuny x1"],
+    "assists": ["dotbloxfuny x3 slimssinho x1"]
   },
 
     {
