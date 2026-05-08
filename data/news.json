@@ -9,18 +9,18 @@
   },
   {
     "id": 2,
-    "title": "Bukovyna signs new striker",
-    "description": "Transfer window heats up",
-    "content": "Transfer details...",
-    "image": "images/news2.png",
-    "category": "Transfer"
+    "title": "Shakhtar Ultras Performance against Polisssya",
+    "description": "Absolutely unbelieveable",
+    "content": "Shakhtar didn’t just win tonight - they devoured the opposition with relentless intensity, brutal pressing and pure dominance, turning the pitch into a battlefield where every attack felt inevitable, every duel was theirs and every minute carried the energy of a side playing with pride, hunger and the ruthless mentality of champions.",
+    "image": "images/news3.png",
+    "category": "League"
   },
   {
     "id": 3,
-    "title": "League standings updated",
-    "description": "New table after matchday",
-    "content": "Full standings breakdown...",
-    "image": "images/news3.png",
-    "category": "League"
+    "title": "Chornomorets VS Bukovyna",
+    "description": "Pre-Match Punditry",
+    "content": "Under the lights in Odesa, Chornomorets face a dangerous Bukovyna side in a clash where intensity, discipline and mentality could decide everything, with the hosts looking to control the tempo through experience while Bukovyna arrive hungry to prove they can compete with anyone and turn this matchday into a statement performance.",
+    "image": "images/news2.png",
+    "category": "Match"
   }
 ]
